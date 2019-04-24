@@ -6,19 +6,18 @@ function local_module_event_extend_settings_navigation($settingsnav, $context) {
 			$settingnode->remove();
 		}
 	}
-function local_subscriptions_extend_navigation(global_navigation $navigation)
+function local_plugin_name_extend_navigation(global_navigation $navigation)
     {
         global $CFG,$DB,$USER, $PAGE;
 		
 			
-				$navigation->add("Course Subscriptions",new moodle_url("/local/subscriptions/userplan.php"));
+				$navigation->add("Course text",new moodle_url("/local/..."));
 				if(is_siteadmin())
 				{
-    				$nav=$navigation->add("Course Bundle");
-    				$nav->add("Bundle List",new moodle_url("/local/subscriptions/bundle_list.php"));
-    				$nav->add("Add New Bundle",new moodle_url("/local/subscriptions/edit_bundle.php"));
+    				$nav=$navigation->add("Coursetext");
+    				$nav->add("name",new moodle_url("/local/..."));
 				}
-				$navigation->add("Subscriptions Plan",new moodle_url("/local/subscriptions/subscriptionplan.php"));
+				$navigation->add("newnode",new moodle_url("/local/..."));
                 if ($settingnode = $navigation->find('participants', navigation_node::TYPE_CONTAINER)) { 
                     //print_object($navigation);
         			$settingnode->remove();
